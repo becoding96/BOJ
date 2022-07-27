@@ -10,8 +10,8 @@ for _ in range(int(sys.stdin.readline())):
     if n == 0: # []가 입력되면 길이 1의 dq = ['']이 되기 때문에 따로 처리
         dq = deque()
 
-    flag = False # dq가 비어있는데 'D'가 나왔는지
-    R_cnt = 0 # R이 홀수번 나왔는지, 짝수번 나왔는지
+    flag = False # dq가 비어있는데 'D'가 나왔는지 판단하는 변수
+    R_cnt = 0 # R이 홀수번 나왔는지, 짝수번 나왔는지 판단하는 변수
     for i in range(len(p)):
         if p[i] == 'R':
             R_cnt += 1
@@ -29,7 +29,7 @@ for _ in range(int(sys.stdin.readline())):
     else:
         if R_cnt % 2:
             dq.reverse()
-            # 바로 list(dq)하면 안됨
+            # 바로 print(list(dq))하면 안됨
             print("[" + ",".join(dq) + "]")
         else:
             print("[" + ",".join(dq) + "]")
