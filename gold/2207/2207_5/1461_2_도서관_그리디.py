@@ -10,8 +10,8 @@ negative = []
 # 가장 거리가 먼 책까지의 거리
 largest = max(max(array), - min(array))
 
-# heappop 함수는 가장 작은 값을 빼내서 리턴하므로
 # 최대 힙(Max Heap)을 위해 원소를 음수로 구성
+# 여기서 최대 힙이란 부모 노드의 키 값이 자식 노드보다 크거나 같은 완전이진트리
 for p in array:
 # 책의 위치가 양수인 경우
     if p > 0:
