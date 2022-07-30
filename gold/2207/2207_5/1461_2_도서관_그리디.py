@@ -1,4 +1,5 @@
 # 나동빈님 풀이
+# 힙큐(heapq) 사용
 import heapq
 
 n, m = map(int, input().split())
