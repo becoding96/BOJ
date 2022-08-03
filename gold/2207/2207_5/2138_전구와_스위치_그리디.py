@@ -1,14 +1,10 @@
-## 220731
+# 220731
 import sys
 
 input = sys.stdin.readline
 n = int(input())
-cur = []
-for c in input().rstrip():
-    cur.append(int(c))
-pur = []
-for c in input().rstrip():
-    pur.append(int(c))
+cur = list(map(int, list(input().rstrip())))
+pur = list(map(int, list(input().rstrip())))
 
 result = []
 
