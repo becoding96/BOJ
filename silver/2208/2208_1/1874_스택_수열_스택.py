@@ -3,7 +3,7 @@ import sys
 from collections import deque
 
 input = sys.stdin.readline
-n = int(input())
+n = int(input().rstrip())
 array = [int(input()) for _ in range(n)]
 tmp = deque()
 stack = deque()
