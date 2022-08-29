@@ -1,13 +1,5 @@
 # 220827
 import sys
-from collections import deque
-
-input = sys.stdin.readline
-R, C = map(int, input().split())
-board = [list(input().rstrip()) for _ in range(R)]
-check = [0] * 26
-check[ord(board[0][0]) - 65] = 1
-result = 0
 
 
 def dfs(i, j, cnt):
@@ -20,6 +12,13 @@ def dfs(i, j, cnt):
             dfs(ni, nj, cnt + 1)
             check[ord(board[ni][nj]) - 65] = 0
 
+
+input = sys.stdin.readline
+R, C = map(int, input().split())
+board = [list(input().rstrip()) for _ in range(R)]
+check = [0] * 26
+check[ord(board[0][0]) - 65] = 1
+result = 0
 
 dfs(0, 0, 1)
 print(result)
