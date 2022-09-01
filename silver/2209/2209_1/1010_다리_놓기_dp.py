@@ -11,7 +11,7 @@ def factorial(n):
 def combination(n, r):
     if n == r:
         return 1
-    elif r == 0 or r == 1 or n - r == 1:
+    elif r == 1 or n - r == 1:
         return n
 
     if r >= n // 2 + 1:
