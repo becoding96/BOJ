@@ -7,7 +7,7 @@ def fib(n):
     if n == 0 or n == 1:
         return
     for _ in range(n - 1):
-        dp.append((dp[-1][0] + dp[-2][0], dp[-1][1] + dp[-2][1] ))
+        dp.append((dp[-1][0] + dp[-2][0], dp[-1][1] + dp[-2][1]))
     return
 
 
