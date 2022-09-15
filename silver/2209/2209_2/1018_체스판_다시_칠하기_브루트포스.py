@@ -8,7 +8,7 @@ def block_count(part):
     cnt2 = 1
     for i in range(8):
         for j in range(8):
-            if i == 0 and j == 0:
+            if i == 0 and j == 0:  # 중요!!
                 continue
             if (i + j) % 2:
                 if part[i][j] == start:
