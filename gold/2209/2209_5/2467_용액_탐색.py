@@ -16,3 +16,4 @@ for i in range(N - 1):
 
 result.sort()
 print(*result)
+
