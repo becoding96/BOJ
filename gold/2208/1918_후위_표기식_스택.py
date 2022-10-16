@@ -1,6 +1,4 @@
 # 220818
-import sys
-from collections import deque
 
 '''
 주어진 문자열을 순회한다.
@@ -10,6 +8,10 @@ from collections import deque
 (+, -는 *, / 보다 우선 순위가 낮으므로 무시하고 pop하지 않고 append한다.)
 괄호가 나오면 괄호 내부를 하나의 다른 연산식으로 보고 재귀 함수를 사용한다.
 '''
+
+import sys
+from collections import deque
+
 
 def postfix(infix):
     result = ''

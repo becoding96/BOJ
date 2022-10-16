@@ -1,9 +1,10 @@
 # 220820
-import sys
 
 '''
 좁은 조건을 더 위에 써줘야 함!
 '''
+
+import sys
 
 
 def check(points):

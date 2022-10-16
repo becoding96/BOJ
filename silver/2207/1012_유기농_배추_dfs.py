@@ -1,7 +1,8 @@
 # 220718
-# dfs
 
+# dfs
 # 재귀 함수 최대 깊이를 설정해줘야 함 (백준, 파이썬 기본 1000)
+
 import sys
 sys.setrecursionlimit(10000) 
 

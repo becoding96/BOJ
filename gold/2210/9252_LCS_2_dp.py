@@ -1,5 +1,4 @@
 # 221013
-
 S1, S2 = input(), input()
 N, M = len(S1), len(S2)
 

@@ -1,7 +1,7 @@
 # 220922
-
 import sys
 from collections import deque
+
 
 def dfs(v):
     print(v, end=" ")
@@ -9,6 +9,7 @@ def dfs(v):
         if dfs_visited[nv] == 0:
             dfs_visited[nv] = 1
             dfs(nv)
+
 
 def bfs(v):
     print(v, end=" ")
@@ -22,6 +23,7 @@ def bfs(v):
                 print(nv, end=" ")
                 q.append(nv)
                 bfs_visited[nv] = 1
+
 
 input = sys.stdin.readline
 N, M, V = map(int, input().split())

@@ -1,12 +1,14 @@
 # 220901
 import sys
 
+
 def factorial(n):
     result = n
     while n >= 3:
         n -= 1
         result *= n
     return result
+
 
 def combination(n, r):
     if n == r:
@@ -18,6 +20,7 @@ def combination(n, r):
         r = n - r
     
     return int(factorial(n) / (factorial(n - r) * factorial(r)))
+
 
 input = sys.stdin.readline
 for _ in range(int(input().rstrip())):

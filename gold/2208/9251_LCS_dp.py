@@ -1,8 +1,7 @@
 # 220813
 # 입력 개수가 작아도 readline이 조금 더 빠름
-import sys
+import sys; input = sys.stdin.readline
 
-input = sys.stdin.readline
 A = input().rstrip()
 B = input().rstrip()
 board = [[0 for _ in range(len(A) + 1)] for _ in range(len(B) + 1)]

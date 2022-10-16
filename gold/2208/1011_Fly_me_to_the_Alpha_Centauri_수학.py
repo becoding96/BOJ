@@ -1,4 +1,5 @@
 # 220812
+
 '''
 아이디어:
 이동 횟수를 최소화하기 위해서는 처음에는 최대한 가속해야 한다.
@@ -14,19 +15,19 @@ n + 1은 n과 n 사이에 끼워넣으면 되고 1 ~ n은 같은 숫자 옆에 �
 n + 2 ~ 2n + 1만큼 남았다면 n + 1을 n과 n 사이에 끼워넣고
 다시 남은 거리 만큼을 같은 숫자 옆에 놓으면 된다.
 '''
-import sys
 
-input = sys.stdin.readline
+import sys; input = sys.stdin.readline
+
 
 def count(d):
-    if d == 1:                         # 거리가 1일 때
+    if d == 1:  # 거리가 1일 때
         return 1
 
-    n = 0                              # n 설정
+    n = 0  # n 설정
     while (n + 1) * (n + 2) < d:
         n += 1
 
-    if (n + 1) * (n + 2) == d:         # 증가, 감소 수열로 나눠 떨어지는 경우
+    if (n + 1) * (n + 2) == d:  # 증가, 감소 수열로 나눠 떨어지는 경우
         n += 1
         return 2 * n
 
@@ -36,6 +37,7 @@ def count(d):
 
     if n + 2 <= d - n * (n + 1) <= 2 * n + 1:
         return 2 * n + 2
+
 
 for T in range(int(input().rstrip())):
     x, y = map(int, input().split())

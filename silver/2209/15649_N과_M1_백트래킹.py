@@ -1,5 +1,4 @@
 # 220921
-
 import sys
 
 def nPr(i, k, r):

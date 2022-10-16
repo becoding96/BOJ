@@ -1,6 +1,7 @@
 # 220826
 import math, sys
 
+
 def rad(point):  
     if point[0] > 0 and point[1] == 0:
         return 0

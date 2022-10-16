@@ -1,5 +1,4 @@
 # 220927
-
 import sys
 from collections import deque
 

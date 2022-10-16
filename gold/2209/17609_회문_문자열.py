@@ -10,6 +10,7 @@ def is_normal_palindrome(s):
         l, r = l + 1, r - 1
     return True
 
+
 def is_palindrome(s):
     l, r = 0, len(s) - 1
     while l < r:
