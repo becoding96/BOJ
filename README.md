@@ -1,3 +1,49 @@
+## 부분 집합
+
+[subset](ssafy/subset/subset.py)
+
+<br>
+
+## 병합 정렬
+
+[merge_sort](ssafy/sort/merge.py)
+
+[better_merge_sort](ssafy/sort/better_merge.py)
+
+<br>
+
+## 퀵 정렬
+
+[quick_sort](ssafy/sort/quick.py)
+
+<br>
+
+## 순열, 조합
+
+[combination](ssafy/permutation%2C%20combination/combination_SSAFY.py)
+
+[permutation](ssafy/permutation%2C%20combination/permutation_SSAFY.py)
+
+<br>
+
+## 프림 알고리즘
+
+[prim](ssafy/graph/prim.py)
+
+<br>
+
+## 크루스칼 알고리즘
+
+[kruskal](ssafy/graph/kruskal.py)
+
+<br>
+
+## 다익스트라 알고리즘
+
+[dijkstra](ssafy/graph/dijkstra.py)
+
+<br>
+
 ## 소수 판별
 
 ```python
