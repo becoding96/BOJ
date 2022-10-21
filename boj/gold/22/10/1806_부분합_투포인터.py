@@ -1,3 +1,4 @@
+# 221021
 N, S = map(int, input().split())
 arr = list(map(int, input().split()))
 result = N
