@@ -84,6 +84,8 @@ def union(a, b):  # 두 트리의 rank를 비교
 
 ## set 연산자 시간복잡도
 
-합집합(union): O(N + M)
-교집합(intersection): O(N + M)
-차집합(difference): O(N + M)
+합집합(union): O(N + M)  
+
+교집합(intersection): O(N + M)  
+
+차집합(difference): O(N + M)  
