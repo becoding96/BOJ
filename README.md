@@ -92,5 +92,5 @@ def union(a, b):  # 두 트리의 rank를 비교
 
 - in
     - list에서 in 연산의 평균 시간 복잡도: O(N)
-    - set에서 in 연산의 평균 시간 복잡도: O(1)
+    - set에서 in 연산의 평균 시간 복잡도: O(1)  
     
