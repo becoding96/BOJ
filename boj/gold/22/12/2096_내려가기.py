@@ -3,7 +3,7 @@
 import sys; input = sys.stdin.readline;
 
 N = int(input().rstrip())
-dp = [[0, 0] for _ in range(3)]
+dp = [[0, 0] for _ in range(3)]  # [0, 0]에서 왼쪽이 최대, 오른쪽이 최소
 tmp = [[0, 0] for _ in range(3)]  # 중간에 계산 결과가 바뀌는 걸 막기 위해 필요
 
 for i in range(N):
