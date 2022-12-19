@@ -10,7 +10,7 @@ import sys; input = sys.stdin.readline
 x, y, c = map(float, input().split())
 s, e = 0, min(x, y)  # 너비(아랫변)가 직각삼각형의 빗변보다 클 수는 없다.
 
-while e - s > 1e-6:
+while e - s > 1e-3:
     width = (s + e) / 2.0
     x_h = (x ** 2 - width ** 2) ** 0.5
     y_h = (y ** 2 - width ** 2) ** 0.5
