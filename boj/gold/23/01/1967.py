@@ -46,7 +46,7 @@ for _ in range(n - 1):
     a, b, w = map(int, input().split())
     board[b].append(a)
     board[b].append(w)
-    level[b] = level[a] + 1  # 자식의 레벨이 부모보다 한 단계 높도록
+    level[b] = level[a] + 1  # 자식의 레벨이 부모보다 한 단계 높도록, 노드가 작은 것부터 입력되기 때문에 이렇게 해도 충분
     not_leafs.add(a)
 
 leafs = sorted(list(nodes - not_leafs), key=lambda x: level[x], reverse=True)  # 리프 노드, 레벨이 높은 리프 노드가 앞에 오도록 정렬
