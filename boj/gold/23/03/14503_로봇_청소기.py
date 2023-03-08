@@ -12,7 +12,7 @@ dir = [(-1, 0), (0, 1), (1, 0), (0, -1)]
 
 
 def sol(i, j, d):
-    global result, turn_off
+    global result
 
     if room[i][j] == 0:
         room[i][j] = -1  # 방문(청소) 체크
