@@ -26,7 +26,7 @@ def to_perfect(b):
 
 # 트리에서 부모노드가 0일 때, 자식 노드가 1인 경우 탐색
 def dfs(pb):
-    # 리프노드에 도착
+    # 리프노드 도착
     if len(pb) == 1:
         return 1
 
