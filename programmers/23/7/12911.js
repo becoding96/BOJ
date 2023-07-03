@@ -16,4 +16,4 @@ function solution(n) {
   }
 }
 
-console.log(solution(78));
+console.log(solution(15));
