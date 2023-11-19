@@ -28,8 +28,6 @@ class Heap {
     let curIdx = this.heap.length - 1;
     let parIdx = Math.floor(curIdx / 2);
 
-    if (this.heap[parIdx] === null) return;
-
     while (this.heap.length >= 2 && this.heap[curIdx] < this.heap[parIdx]) {
       if (this.heap[parIdx] === null) return;
 
