@@ -18,7 +18,7 @@ function isPrime(n) {
 ## 최소 Heap 구현
 
 ```js
-class MinHeap {
+class Heap {
   constructor() {
     this.heap = [null];
   }
@@ -26,70 +26,58 @@ class MinHeap {
   heappush(value) {
     this.heap.push(value);
 
-    let curIdx = this.heap.length - 1;
-    let parIdx = Math.floor(curIdx / 2);
+    let curIndex = this.heap.length - 1;
+    let parIndex = Math.floor(curIndex / 2);
 
-    while (this.heap.length >= 2 && this.heap[curIdx] < this.heap[parIdx]) {
-      if (this.heap[parIdx] === null) return;
+    while (parIndex !== 0 && this.heap[curIndex] < this.heap[parIndex]) {
+      this._swap(parIndex, curIndex);
 
-      this._swap(parIdx, curIdx);
-
-      curIdx = parIdx;
-      parIdx = Math.floor(curIdx / 2);
+      curIndex = parIndex;
+      parIndex = Math.floor(curIndex / 2);
     }
   }
 
   heappop() {
+    if (this.isEmpty()) return;
+    if (this.heap.length === 2) return this.heap.pop();
+
     const min = this.heap[1];
-    if (this.heap.length <= 2) this.heap = [null];
-    else this.heap[1] = this.heap.pop();
+    this.heap[1] = this.heap.pop();
 
-    let curIdx = 1;
-    let leftIdx = curIdx * 2;
-    let rightIdx = curIdx * 2 + 1;
-
-    // 왼쪽 자식이 없으면 루트만 있는 상태
-    if (!this.heap[leftIdx]) return min;
-    // 오른쪽 자식이 없으면 왼쪽 자식 하나만 있는 상태
-    if (!this.heap[rightIdx] && this.heap[curIdx] > this.heap[leftIdx]) {
-      this._swap(curIdx, leftIdx);
-
-      return min;
-    }
+    let curIndex = 1,
+      leftIndex = 2,
+      rightIndex = 3;
 
     while (
-      this.heap[curIdx] > this.heap[leftIdx] ||
-      this.heap[curIdx] > this.heap[rightIdx]
+      (this.heap[leftIndex] && this.heap[curIndex] > this.heap[leftIndex]) ||
+      (this.heap[rightIndex] && this.heap[curIndex] > this.heap[rightIndex])
     ) {
-      const lowerIdx =
-        this.heap[leftIdx] > this.heap[rightIdx] ? rightIdx : leftIdx;
+      if (this.heap[leftIndex] === undefined) {
+        this._swap(rightIndex, curIndex);
+      } else if (this.heap[rightIndex] === undefined) {
+        this._swap(leftIndex, curIndex);
+      } else if (this.heap[leftIndex] > this.heap[rightIndex]) {
+        this._swap(curIndex, rightIndex);
+        curIndex = rightIndex;
+      } else if (this.heap[leftIndex] <= this.heap[rightIndex]) {
+        this._swap(curIndex, leftIndex);
+        curIndex = leftIndex;
+      }
 
-      this._swap(curIdx, lowerIdx);
-
-      curIdx = lowerIdx;
-      leftIdx = curIdx * 2;
-      rightIdx = curIdx * 2 + 1;
+      leftIndex = curIndex * 2;
+      rightIndex = curIndex * 2 + 1;
     }
 
     return min;
   }
-}
 
-/** 기존의 배열을 Heap으로 */
-heapify(arr) {
-  const heapArr = new Heap();
+  isEmpty() {
+    return this.heap.length === 1;
+  }
 
-  arr.map((item) => heapArr.heappush(item));
-
-  return heapArr;
-}
-
-isEmpty() {
-  return this.heap.length === 1;
-}
-
-_swap(a, b) {
-  [this.heap[a], this.heap[b]] = [this.heap[b], this.heap[a]];
+  _swap(a, b) {
+    [this.heap[a], this.heap[b]] = [this.heap[b], this.heap[a]];
+  }
 }
 ```
 
