@@ -15,10 +15,10 @@ function isPrime(n) {
 
 <br>
 
-## Heap 구현
+## 최소 Heap 구현
 
 ```js
-class Heap {
+class MinHeap {
   constructor() {
     this.heap = [null];
   }
@@ -31,10 +31,7 @@ class Heap {
     while (this.heap.length >= 2 && this.heap[curIdx] < this.heap[parIdx]) {
       if (this.heap[parIdx] === null) return;
 
-      [this.heap[parIdx], this.heap[curIdx]] = [
-        this.heap[curIdx],
-        this.heap[parIdx],
-      ];
+      this._swap(parIdx, curIdx);
 
       curIdx = parIdx;
       parIdx = Math.floor(curIdx / 2);
@@ -54,10 +51,7 @@ class Heap {
     if (!this.heap[leftIdx]) return min;
     // 오른쪽 자식이 없으면 왼쪽 자식 하나만 있는 상태
     if (!this.heap[rightIdx] && this.heap[curIdx] > this.heap[leftIdx]) {
-      [this.heap[curIdx], this.heap[leftIdx]] = [
-        this.heap[leftIdx],
-        this.heap[curIdx],
-      ];
+      this._swap(curIdx, leftIdx);
 
       return min;
     }
@@ -69,10 +63,7 @@ class Heap {
       const lowerIdx =
         this.heap[leftIdx] > this.heap[rightIdx] ? rightIdx : leftIdx;
 
-      [this.heap[curIdx], this.heap[lowerIdx]] = [
-        this.heap[lowerIdx],
-        this.heap[curIdx],
-      ];
+      this._swap(curIdx, lowerIdx);
 
       curIdx = lowerIdx;
       leftIdx = curIdx * 2;
@@ -90,6 +81,14 @@ function heapify(arr) {
   arr.map((item) => heapArr.heappush(item));
 
   return heapArr;
+}
+
+function isEmpty() {
+  return this.heap.length === 1;
+}
+
+function _swap(a, b) {
+  [this.heap[a], this.heap[b]] = [this.heap[b], this.heap[a]];
 }
 ```
 
