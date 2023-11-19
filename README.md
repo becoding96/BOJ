@@ -25,6 +25,7 @@ class MinHeap {
 
   heappush(value) {
     this.heap.push(value);
+
     let curIdx = this.heap.length - 1;
     let parIdx = Math.floor(curIdx / 2);
 
@@ -75,7 +76,7 @@ class MinHeap {
 }
 
 /** 기존의 배열을 Heap으로 */
-function heapify(arr) {
+heapify(arr) {
   const heapArr = new Heap();
 
   arr.map((item) => heapArr.heappush(item));
@@ -83,11 +84,11 @@ function heapify(arr) {
   return heapArr;
 }
 
-function isEmpty() {
+isEmpty() {
   return this.heap.length === 1;
 }
 
-function _swap(a, b) {
+_swap(a, b) {
   [this.heap[a], this.heap[b]] = [this.heap[b], this.heap[a]];
 }
 ```
