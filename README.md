@@ -44,7 +44,7 @@ class Heap {
   heappop() {
     const min = this.heap[1];
     if (this.heap.length <= 2) this.heap = [null];
-    this.heap[1] = this.heap.pop();
+    else this.heap[1] = this.heap.pop();
 
     let curIdx = 1;
     let leftIdx = curIdx * 2;
