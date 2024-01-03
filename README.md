@@ -48,22 +48,24 @@ class Heap {
       leftIndex = 2,
       rightIndex = 3;
 
-    while (
-      (this.heap[leftIndex] && this.heap[curIndex] > this.heap[leftIndex]) ||
-      (this.heap[rightIndex] && this.heap[curIndex] > this.heap[rightIndex])
+    if (this.heap[leftIndex] === undefined) return min;
+    else if (
+      this.heap[rightIndex] === undefined &&
+      this.heap[curIndex] > this.heap[leftIndex]
     ) {
-      if (this.heap[leftIndex] === undefined) {
-        this._swap(rightIndex, curIndex);
-      } else if (this.heap[rightIndex] === undefined) {
-        this._swap(leftIndex, curIndex);
-      } else if (this.heap[leftIndex] > this.heap[rightIndex]) {
-        this._swap(curIndex, rightIndex);
-        curIndex = rightIndex;
-      } else if (this.heap[leftIndex] <= this.heap[rightIndex]) {
-        this._swap(curIndex, leftIndex);
-        curIndex = leftIndex;
-      }
+      this._swap(curIndex, leftIndex);
+      return min;
+    }
 
+    while (
+      this.heap[curIndex] > this.heap[leftIndex] ||
+      this.heap[curIndex] > this.heap[rightIndex]
+    ) {
+      const lowerIndex = this.heap[leftIndex] > this.heap[rightIndex] ? rightIndex : leftIndex;
+
+      this._swap(curIndex, lowerIndex);
+
+      curIndex = lowerIndex;
       leftIndex = curIndex * 2;
       rightIndex = curIndex * 2 + 1;
     }
