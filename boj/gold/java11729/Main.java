@@ -1,6 +1,8 @@
+package boj.gold.java11729;
+
 import java.io.*;
 
-public class Main11729 {
+public class Main {
     static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {

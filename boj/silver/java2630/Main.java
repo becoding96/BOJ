@@ -1,7 +1,9 @@
+package boj.silver.java2630;
+
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Main2630 {
+public class Main {
     static int[][] cp;
     static int[] totalColorCnt = {0, 0};
     static int[] reverse = {1, 0};
