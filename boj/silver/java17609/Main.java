@@ -22,12 +22,9 @@ public class Main {
 
         while (l <= r) {
             if (str.charAt(l) != str.charAt(r)) {
-                if (chance == 1) {
-                    if (is_palindrome(str.substring(l + 1, r + 1), 0) == 1 || is_palindrome(str.substring(l, r), 0) == 1) {
-                        return 1;
-                    } else {
-                        return 2;
-                    }
+                if (chance == 1 && (is_palindrome(str.substring(l + 1, r + 1), 0) == 1
+                        || is_palindrome(str.substring(l, r), 0) == 1)) {
+                    return 1;
                 } else {
                     return 2;
                 }
